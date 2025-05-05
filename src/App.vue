@@ -53,7 +53,23 @@ export default{
 
     windDeg(){
       return this.info.wind.deg+" °"
-    }
+    },
+
+    // стрелка направления
+    windDirection() {
+      if (!this.info || !this.info.wind || this.info.wind.deg === undefined)
+        return '';
+      const deg = this.info.wind.deg;
+      if (deg >= 337.5 || deg < 22.5) return '↑'; // Север
+      if (deg >= 22.5 && deg < 67.5) return '↗'; // Северо-восток
+      if (deg >= 67.5 && deg < 112.5) return '→'; // Восток
+      if (deg >= 112.5 && deg < 157.5) return '↘'; // Юго-восток
+      if (deg >= 157.5 && deg < 202.5) return '↓'; // Юг
+      if (deg >= 202.5 && deg < 247.5) return '↙'; // Юго-запад
+      if (deg >= 247.5 && deg < 292.5) return '←'; // Запад
+      if (deg >= 292.5 && deg < 337.5) return '↖'; // Северо-запад
+      return '';
+    },
    
   }, 
 
