@@ -95,7 +95,8 @@ export default{
         <tr> <th>Атмосферное давление</th>  <td>{{pressure}}</td>  </tr> 
         <tr> <th>Влажность</th>  <td>{{humidity}}</td>  </tr> 
         <tr> <th>Скорость ветра</th>  <td>{{wind}}</td>  </tr> 
-        <tr> <th>Направление ветра</th>  <td>{{windDeg}}</td>  </tr> 
+        <tr> <th>Направление ветра</th> 
+        <td>{{ windDeg }} {{ windDirection }}</td>
      
       </table>
     </div> 
